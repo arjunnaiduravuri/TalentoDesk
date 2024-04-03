@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Layout</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .top-container {
+    flex: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3498db;
+  }
+  .bottom-container {
+    flex: 80%;
+    display: flex;
+  }
+  .left-side {
+    flex: 50%;
+    background-color: #fafafa04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-side {
+    flex: 50%;
+    background-color: #fafafa05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .details {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  .details:hover {
+    transform: scale(1.1);
+  }
+  .image-container {
+    width: 80%;
+    height: 80%;
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-container">
+    <a href="#" class="details">Home</a>
+    <a href="#" class="details">About</a>
+    <a href="#" class="details">Contact</a>
+    <a href="#" class="details">Sign In</a>
+  </div>
+  <div class="bottom-container">
+    <div class="left-side">
+      <div class="image-container">
+        <img src="https://thumbs.dreamstime.com/b/d-little-man-researches-job-render-person-looking-magnifying-glass-40310279.jpg" alt="Job Search">
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZuPpUlUlMQR_fqV5Ubl5nHdWh9ZdOsTC_zw&usqp=CAU" alt="Right Side Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

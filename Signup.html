@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css" rel="stylesheet">
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00f; /* Blue background color outside the container */
+        }
+
+        .container-box {
+            width: 98%; /* Increased width to 95% */
+            max-width: 1250px; /* Adjusted maximum width */
+            background: #fff; /* White background color inside the container */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            height: 97vh; /* Increased height to 95vh */
+        }
+
+        .left-part {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #ccc;
+        }
+
+        .right-part {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-part form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc; /* Added border for the form */
+            width: 350px; /* Increased width */
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .form-check-label a {
+            color: blue;
+        }
+
+        /* Red star for mandatory fields */
+        .mandatory::before {
+            content: "* ";
+            color: red;
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .container-box {
+                flex-direction: column;
+            }
+
+            .left-part {
+                border-right: none;
+            }
+        }
+
+        /* Style for social media icons */
+        .fab {
+            font-size: 23px; /* Increase size */
+            border-radius: 50%; /* Round shape */
+            padding: 10px; /* Increase padding for spacing */
+            color: inherit; /* Inherit original color */
+            background-color: transparent; /* Transparent background */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .fab.fa-twitter-square {
+            color: #1DA1F2; /* Twitter blue color */
+        }
+
+        .fab.fa-google {
+            background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-box">
+        <div class="left-part">
+            <img src="logo.png" alt="Logo" style="max-width: 250px; margin-bottom: 3px;"> <!-- Added logo here -->
+            <h2>Welcome to Talento Link!</h2>
+            <p>"Join Talent Link today! Register to unlock exclusive features and connect with top talent worldwide. Gain access to our powerful dashboard to streamline your recruitment process. Let's build the future of talent together."</p>
+        </div>
+        <div class="right-part">
+            <!-- Form Container -->
+            <form class="form-container">
+                <h3 class="text-center mb-4">Register Now</h3>
+                  <div class="form-group d-flex">
+                    <div style="flex: 1;">
+                        <label for="company">Company Name<span class="mandatory"></span></label>
+                        <input type="text" class="form-control" id="company" placeholder="Enter company name">
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="website">Company Website<span class="mandatory"></span></label>
+                        <input type="text" class="form-control" id="website" placeholder="Enter company website">
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div style="flex: 1;">
+                        <label for="designation">Designation<span class="mandatory"></span></label>
+                        <select class="form-control" id="designation">
+                            <option value="" selected> Select Designation</option> 
+                            <option value="Director">Director</option>
+                            <option value="CEO">CEO</option>
+                            <option value="Manager">Manager</option>
+                            <option value="HR">HR</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="contact">Contact Person Name<span class="mandatory"></span></label>
+                        <input type="text" class="form-control" id="contact" placeholder="Enter contact person name">
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div style="flex: 1;">
+                        <label for="mobile">Mobile Number with Country code<span class="mandatory"></span></label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number along with Country code">
+                        </div>
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="email">Email Address<span class="mandatory"></span></label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email address">
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div style="flex: 1;">
+                        <label for="password">Password<span class="mandatory"></span></label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="confirm-password">Confirm Password<span class="mandatory"></span></label>
+                        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password">
+                    </div>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="terms-checkbox">
+                    <label class="form-check-label" for="terms-checkbox">
+                        I agree to the <a href="#">Terms and Conditions</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block submit-btn">Register Now</button>
+                <p class="mt-3 text-center">or</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#"><i class="fab fa-google mx-2"></i></a>
+                    <a href="#"><i class="fab fa-facebook mx-2"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square mx-2"></i></a>
+                </div>
+                <p class="mt-3 text-center">Already have an account? <a href="index.html">Sign In</a></p>
+            </form>
+        </div>
+    </div>  
+    <script>
+        
+        // Function to validate the form
+            function validateForm() {
+            var companyName = document.getElementById("company").value;
+            var designation = document.getElementById("designation").value;
+            var contactPerson = document.getElementById("contact").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            var termsCheckbox = document.getElementById("terms-checkbox");
+            var website = document.getElementById("website").value;
+
+            // Error message container
+            var errorMessage = "";
+
+            // Check if any field is empty
+            if (companyName == "" || designation == "" || contactPerson == "" || mobile == "" || email == "" || password == "" || confirmPassword == "" || !termsCheckbox.checked) {
+                errorMessage = "All fields are mandatory.";
+            }
+
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                errorMessage += "\nPlease enter the same password in both fields.";
+            }
+
+            // Password validation criteria
+            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                errorMessage += "\nPassword must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.";
+                document.getElementById("password").style.borderColor = "red";
+            } else {
+                document.getElementById("password").style.borderColor = ""; // Reset border color if validation passed
+            }
+
+            // Check if terms and conditions checkbox is checked
+            if (!termsCheckbox.checked) {
+                errorMessage += "\nPlease agree to the terms and conditions.";
+            }
+
+            // Check if mobile number includes country code
+            if (!mobile.startsWith('+')) {
+                errorMessage += "\nPlease enter the mobile number along with the country code.";
+            }
+
+            // Check if email is from a valid domain and matches the company's domain
+            var allowedDomains = ["@hotmail.com"];
+            var companyDomain = website.replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+            var isValidDomain = allowedDomains.some(function(domain) {
+                return email.endsWith(domain);
+            });
+
+            if (!isValidDomain || !email.endsWith("@" + companyDomain)) {
+                errorMessage += "\nPlease enter a valid email address matching the company domain (" + companyDomain + ").";
+                document.getElementById("email").style.borderColor = "red";
+            } else {
+                document.getElementById("email").style.borderColor = ""; // Reset border color if validation passed
+            }
+
+            // Display error message if any
+            if (errorMessage !== "") {
+                alert("TALENTO LINK SAYS: " + errorMessage); // Changed here
+                return false; // Prevent form submission
+            }
+
+            // Form is valid
+            return true;
+        }
+    
+        // Event listener for real-time password validation
+        document.getElementById("password").addEventListener("input", function() {
+            var password = this.value;
+            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    
+            if (!passwordRegex.test(password)) {
+                this.style.borderColor = "red";
+            } else {
+                this.style.borderColor = ""; // Reset border color if validation passed
+            }
+        });
+    
+        // Event listener for real-time confirm password validation
+        document.getElementById("confirm-password").addEventListener("input", function() {
+            var confirmPassword = this.value;
+            var password = document.getElementById("password").value;
+    
+            if (confirmPassword !== password) {
+                this.style.borderColor = "red";
+            } else {
+                this.style.borderColor = ""; // Reset border color if validation passed
+            }
+        });
+    
+                // Event listener for mobile number
+        document.getElementById("mobile").addEventListener("blur", function() {
+            var mobileNumber = this.value;
+
+            // Check if mobile number starts with '+'
+            if (!mobileNumber.startsWith('+')) {
+                this.style.borderColor = "red";
+                alert("Please enter the mobile number along with the country code.");
+
+                // Add event listener for clicking "OK"
+                window.addEventListener('click', closeAlert);
+            } else {
+                this.style.borderColor = ""; // Reset border color if validation passed
+            }
+        });
+
+        // Event listener for email validation
+        document.getElementById("email").addEventListener("blur", function() {
+            var email = this.value;
+            var companyDomain = document.getElementById("website").value.replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+            var isValidEmail = email.endsWith("@" + companyDomain);
+
+            if (!isValidEmail) {
+                this.style.borderColor = "red";
+                alert("Please enter a valid email address matching the company domain (" + companyDomain + ").");
+
+                // Add event listener for clicking "OK"
+                window.addEventListener('click', closeAlert);
+            } else {
+                this.style.borderColor = ""; // Reset border color if validation passed
+            }
+        });
+
+        function closeAlert(event) {
+            var target = event.target;
+            if (target.nodeName === 'BUTTON' && target.innerText === 'OK') {
+                // Remove the event listener
+                window.removeEventListener('click', closeAlert);
+
+                // Trigger validation of the next field
+                if (document.getElementById("mobile").style.borderColor === "red") {
+                    document.getElementById("email").focus();
+                    document.getElementById("email").dispatchEvent(new Event('blur'));
+                } else if (document.getElementById("email").style.borderColor === "red") {
+                    document.getElementById("mobile").focus();
+                    document.getElementById("mobile").dispatchEvent(new Event('blur'));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

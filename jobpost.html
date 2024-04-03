@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Job Portal Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        #sidebar {
+            background-color: #007bff;
+            color: #fff;
+            transition: all 0.3s;
+            min-width: 250px;
+            max-width: 350px;
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Align items in center */
+            padding-top: 20px;
+        }
+
+        #sidebar .list-group-item {
+            background-color: transparent;
+            border: none;
+        }
+
+        #sidebar .list-group-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #sidebar .active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Style for the header */
+        #header {
+            background-color: #ffffff;
+            height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 250px; /* Width of the sidebar */
+            right: 0;
+            z-index: 999;
+        }
+
+        #header img {
+            height: 40px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #header .profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #header .profile img {
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%; /* Round border shape */
+        }
+
+        /* New styles for right side dashboard container */
+        #right-dashboard {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-left: 250px; /* Width of the sidebar */
+            margin-top: 60px; /* Height of the header */
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Style for logout button */
+        .logout-btn {
+            color: #fff;
+            background-color: #dc3545; /* Red color */
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 10px 20px;
+            margin-top: auto; /* Push button to the bottom */
+            cursor: pointer;
+        }
+
+        .logout-btn i {
+            margin-right: 10px;
+        }
+        .card-custom {
+            height: 200px; /* Set desired height */
+            border: 2px solid #007bff; /* Set border */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            transition: all 0.3s; /* Smooth transition */
+        }
+
+        .card-link {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color */
+        }
+
+        /* Gradient Background Colors for Cards */
+        .card:nth-child(1) {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+        }
+
+        .card:nth-child(2) {
+            background: linear-gradient(to right, #fa709a, #fee140);
+        }
+
+        .card:nth-child(3) {
+            background: linear-gradient(to right, #abecd6, #fbed96);
+        }
+
+        .card:nth-child(4) {
+            background: linear-gradient(to right, #ffe259, #ffa751);
+        }
+
+        /* Hover Effect */
+        .card-custom:hover {
+            transform: scale(1.05); /* Increase size on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+        }
+      
+       
+    </style>
+</head>
+<body>
+   
+<div id="sidebar">
+    <img src="path_to_your_logo.png" alt="Company Logo">
+ 
+   
+    <ul class="list-group list-group-flush mt-5">
+        <div class="overview">
+            <h5>Overview</h5>
+        <div class="chat-container">
+        <li class="list-group-item active">
+            <a href="#" class="text-white"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="list-group-item active">
+            <a href="#" class="text-white"><i class="fa fa-bell"></i> Notifications</a>
+        </li>
+        <li class="list-group-item active">
+            <a href="#" class="text-white"><i class="far fa-comment"></i> Chat</a>
+        </li>
+</div></div>
+<br>
+<div class="Manage Hiring">
+    <h5>Manage Hiring</h5>
+    <div class="chat-container">
+        <li class="list-group-item">
+            <a href="jobposting.html" class="text-white"><i class="fas fa-file-alt"></i> Job Post</a>
+        </li>
+        <li class="list-group-item">
+            <a href="My job posts.html" class="text-white"><i class="fas fa-file-alt"></i>My Job Posts</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fa fa-list"></i> Applicants</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fa fa-users"></i> Selected Candidates</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fa fa-check"></i> Interviews</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fas fa-briefcase"></i> Job Offers</a>
+        </li>
+     
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fa fa-address-card"></i> My services </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fa fa-file"></i> ATS Resume Score Check</a>
+        </li>
+        </div></div>
+        <br>
+        <div class="Profile">
+            <h5>Profile</h5>
+            <div class="chat-container">
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fas fa-building"></i> My Profile</a>
+        </li>
+        
+        <li class="list-group-item">
+            <a href="#" class="text-white"><i class="fas fa-users"></i> Users</a>
+        </li>
+        <!-- Logout button -->
+        <li class="list-group-item">
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </li>
+        </div></div>
+        <br>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-primary">Need Help</button>
+              </div>
+              <div class="col">
+                <button class="btn btn-secondary">Contact Support</button>
+              </div>
+            </div>
+          </div>
+          
+            
+                
+              
+
+    </ul>
+</div>
+
+Conversation starred. None selected
+
+Skip to content
+Using Gmail with screen readers
+
+Conversations
+14.11 GB of 15 GB (94%) used
+Terms · Privacy · Program Policies
+Last account activity: 0 minutes ago
+Details
+<section>
+<!-- Job Posting Page -->
+<div id="right-dashboard">
+    
+    <div class="container   rounded-5 py-4 px-4" style="width: 75%;border-radius: 20px;border:2px solid rgb(145, 143, 143)">
+        
+        <form method="POST" enctype="multipart/form-data" onsubmit="return false">
+            <div class="px-0" width: 100%;height: 100%;margin-top: -23px;margin-bottom: 10px;border-radius: 50px;">
+                <h1 class="text-center bg-primary rounded-3">Job Post Application Form</h1>
+            </div>
+            <h3>Job Detail</h3>
+           <div class="d-flex boder justify-content-between" style="width: 100%;">
+             <!-- Job Title -->
+            <div class="form-group"  style="width: 100%;" >
+                <label for="job-title">Job Title</label>
+                <input type="text" class="form-control border border-dark" id="job-title" name="job_title" required>
+            </div>
+             
+           </div>
+            <!-- Job Description -->
+            <div class="form-group">
+                <label for="job-description">Job Description</label>
+                <textarea class="form-control border border-dark" id="job-description" name="job_description" rows="3" required></textarea>
+            </div>
+            <div class="d-flex boder justify-content-between" style="width: 100%;">
+                <!-- Location of Job -->
+                <div class="form-group" style="width: 48%;">
+                    <label for="location">Job Type</label>
+                    <select class="form-control border border-dark" id="location" name="location">
+                        <option value="work_from_home">--select--</option>
+                        <option value="work_from_home">Onsite</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="work_from_office">Remote</option>
+                    </select>
+                </div>
+                <!-- shift -->
+                <div class="form-group" style="width: 48%;">
+                    <label for="location">Shift</label>
+                    <select class="form-control border border-dark" id="location" name="location">
+                        <option value="work_from_home">--select--</option>
+                        <option value="work_from_home">Rotational shift</option>
+                        <option value="hybrid">Regular shift</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                
+                <div class="d-flex boder justify-content-between mb-3" style="width: 100%;">
+                    <input type="text" class="form-control border border-dark" id="address" name="address" placeholder="City" style="width: 48%;">
+                    <input type="text" class="form-control border border-dark" id="address" name="address" placeholder="State" style="width: 48%;">
+                </div>
+                <div class="d-flex boder justify-content-between" style="width: 100%;">
+                    <input type="text" class="form-control border border-dark" id="address" name="address" placeholder="Country" style="width: 48%;">
+                    <input type="text" class="form-control border border-dark" id="address" name="address" placeholder="Pincode" style="width: 48%;">
+                </div>
+            </div>
+            <div class="d-flex boder justify-content-between" style="width: 100%;">
+                <div class="form-group"  style="width: 48%;" >
+                    <label for="job-title">Expected Income</label>
+                    <input type="text" class="form-control border border-dark" id="job-title" name="job_title" required>
+                </div>
+
+                <!-- Upload JD (PDF) -->
+                <div class="form-group" style="width: 48%;" >
+                    <label for="jd">Upload JD (PDF)</label>
+                    <input type="file" class="form-control-file" id="jd" name="jd" accept=".pdf" required>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <h3>Educational Qualification</h3>
+            <div class="d-flex justify-content-between" style="width: 100%;">
+                <!-- Education Qualification -->
+            <div class="form-group" style="width: 48%;">
+                <label for="education">Education Qualification</label>
+                <select class="form-control border border-dark" id="education" name="education">
+                    <option value="ssc">--select--</option>
+                    <option value="ssc">SSC</option>
+                    <option value="10+2">10+2</option>
+                    <option value="graduation">Graduation</option>
+                    <option value="post_graduation">Post Graduation</option>
+                </select>
+            </div>
+            <!-- Specific Degree (Graduation or Post Graduation) -->
+            <div class="form-group" id="specific-degree" style="width: 48%;">
+                <label for="degree">Specific Degree</label>
+                <select class="form-control border border-dark" id="degree" name="degree">
+                    <!-- Options will be dynamically populated based on selected education qualification -->
+                </select>
+            </div>
+            </div>
+            <div class="d-flex justify-content-between" style="width: 100%;">
+                <!-- Experience -->
+                <div class="form-group" style="width: 48%;">
+                    <label for="experience">Experience</label>
+                    <select class="form-control border border-dark" id="experience" name="experience">
+                        <option value="freshers">--select--</option>
+                        <option value="freshers">Freshers</option>
+                        <option value="interns">Interns</option>
+                        <option value="experience">Experience</option>
+                    </select>
+                </div>
+                <!-- years of Experience -->
+                <div class="form-group" style="width: 48%;">
+                    <label for="experience"> Years of Experience</label>
+                    <select class="form-control border border-dark" id="experience" name="experience">
+                        <option value="freshers">--select--</option>
+                        <option value="freshers">0-1</option>
+                        <option value="interns">1-3</option>
+                        <option value="experience">3-5</option>
+                        <option value="experience">more than 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between" style="width: 100%;">
+                <!-- Certification -->
+            <div class="form-group" style="width: 48%;">
+                <label for="certification">Do you need any certification?</label>
+                <select class="form-control border border-dark" id="certification" name="certification">
+                    <option value="">--select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Certification Details -->
+            <div class="form-group" id="certification-details" style="width: 48%;">
+                <label for="certificate">Certificate Details</label>
+                <input type="text" class="form-control border border-dark" id="certificate" name="certificate">
+            </div>
+            </div>
+            <!-- Skills -->
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input type="text" class="form-control border border-dark" id="skills" name="skills" style="height: 50px;">
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary text-center px-5 mt-3" style="margin-left: 40%;" >Submit</button>
+        </form>
+    </div>
+</div>
+</section>
+body.txt
+Displaying body.txt.
+<div id="header">
+    <!-- Company logo moved to the sidebar -->
+    <div class="profile">
+        <!-- Add your user profile icon and notification bell icon here -->
+        <i class="fas fa-bell"></i>
+        <img src="logo.png" >
+      
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
